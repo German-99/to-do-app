@@ -12,13 +12,13 @@ public class DataResetScheduler {
     @Autowired
     private TaskRepository taskRepository;
 
-    @Scheduled(fixedRate = 20000)
+    @Scheduled(fixedRate = 600000)
     public void resetData() {
           taskRepository.deleteAll();
 
         Task task1 = new Task();
         task1.setTitle("Update Spring boot project");
-        task1.setCompleted(true);
+        task1.setCompleted(false);
         taskRepository.save(task1);
 
         Task task2 = new Task();
